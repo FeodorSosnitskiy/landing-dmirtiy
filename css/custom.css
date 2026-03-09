@@ -1,0 +1,121 @@
+html.lenis {
+  height: auto;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  outline: none;
+}
+
+a:hover {
+  outline: none;
+}
+
+main {
+  counter-reset: section;
+}
+
+.splitting .word {
+  white-space: nowrap;
+}
+
+.intro__title-pre {
+  font-size: clamp(2rem, 10vw, 9rem);
+}
+
+.intro__title-sub {
+  font-size: clamp(1rem, 6vw, 2.75rem);
+}
+
+.content:last-child {
+  padding-bottom: 40vh;
+}
+
+.content--highlight p {
+  font-size: clamp(1rem, 3vw, 2rem);
+}
+
+.content__title {
+  counter-increment: section;
+}
+
+.content__title::before {
+  content: '.'counter(section);
+  font-weight: 400;
+  font-family: area-normal, sans-serif;
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 10vh;
+  text-align: center;
+}
+
+.content__title--sides span:last-child {
+  justify-self: end;
+}
+
+.splitting .font-sub .word {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.char-wrap {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.font-13 {
+  font-weight: initial;
+  font-variation-settings: "wght" 400;
+}
+
+.font-14 {
+  font-weight: initial;
+  font-variation-settings: "STYL" 0;
+}
+
+.font-15 {
+  font-weight: initial;
+  font-variation-settings: 'STYL' 100;
+}
+
+.font-16 {
+  font-weight: initial;
+  font-variation-settings: "slnt" 0;
+}
+
+.font-17 {
+  font-weight: initial;
+  font-variation-settings: "wght" 450, "wdth" 80;
+}
+
+.font-18 {
+  font-weight: initial;
+  font-variation-settings: "slnt" 0, "wght" 100, "wdth" 100;
+}
+
+.font-19 {
+  font-weight: initial;
+  font-variation-settings: "slnt" 0, "wght" 610;
+}
+
+.font-20 {
+  font-weight: initial;
+  font-variation-settings: "wght" 400;
+}
+
+.font-23 {
+  font-family: "arsenica-variable", sans-serif;
+  font-variation-settings: "opsz" 1000, "wght" 300;
+}

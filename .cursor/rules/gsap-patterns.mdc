@@ -1,0 +1,87 @@
+---
+description: GSAP animation architecture and patterns
+globs: ["**/*.js"]
+alwaysApply: true
+---
+
+This project uses GSAP and ScrollTrigger for scroll-based storytelling animations.
+
+Architecture principles:
+
+Animations must be separated into logical modules:
+
+- gsap-setup.js
+- scroll-scenes.js
+- cursor-effects.js
+- main.js
+
+Never mix all animations in one file.
+
+GSAP setup must be centralized.
+
+Example setup pattern:
+
+gsap.registerPlugin(ScrollTrigger)
+
+Use timelines for sequences instead of multiple standalone tweens.
+
+Preferred pattern:
+
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".section",
+    start: "top center",
+    end: "bottom center",
+    scrub: true
+  }
+})
+
+tl.from(".title", {
+  y: 40,
+  opacity: 0,
+  duration: 1
+})
+
+Use pinning for storytelling sections when appropriate.
+
+Example pin pattern:
+
+ScrollTrigger.create({
+  trigger: ".hero",
+  start: "top top",
+  end: "+=200%",
+  pin: true,
+  scrub: true
+})
+
+Performance rules:
+
+- animate only transform and opacity
+- avoid animating width/height/top/left
+- avoid heavy DOM reads inside scroll callbacks
+- batch animations when possible
+
+Use matchMedia for responsive animation logic.
+
+Example:
+
+ScrollTrigger.matchMedia({
+
+  "(min-width: 1024px)": function() {
+
+    // desktop animations
+
+  },
+
+  "(max-width: 1023px)": function() {
+
+    // mobile animations
+
+  }
+
+})
+
+Cursor must generate clean, readable animation code suitable for production.
+
+Avoid overly complex animation unless requested.
+Prefer subtle motion suitable for premium storytelling websites.

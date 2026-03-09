@@ -1,0 +1,7 @@
+---
+alwaysApply: true
+---
+Always use GSAP and ScrollTrigger for scroll animations.
+Avoid CSS scroll libraries.
+Register GSAP plugins explicitly.
+Prefer timelines for sequences.
