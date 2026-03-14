@@ -523,9 +523,7 @@ input:-webkit-autofill:active {
   line-height: 1.5;
 }
 
-.about-content_images {
-  height: clamp(34rem, calc(24rem + 12vw), 48rem);
-}
+/* .about-content_images height moved to media queries */
 
 /* Уменьшить текст описания под табами */
 .about_body .text-size-large {
@@ -536,6 +534,25 @@ input:-webkit-autofill:active {
 /* Увеличить расстояние между табами */
 .about_tabs-menu {
   gap: 1.5rem !important;
+}
+
+/* ========================================
+   TABLET ABOUT FIX (991px and below)
+   ======================================== */
+
+@media screen and (max-width: 991px) {
+  .about-content_images {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 60vh !important;
+    min-height: 400px !important;
+    border-radius: 12px !important;
+  }
+  
+  .about-content_image {
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
 }
 
 /* ========================================
@@ -582,6 +599,38 @@ input:-webkit-autofill:active {
 @media screen and (max-width: 767px) {
   .heading-style-h0 {
     font-size: clamp(2.5rem, 14vw, 4rem) !important;
+  }
+  
+  /* About section - картинка на всю ширину */
+  .about-content_images,
+  .section_about .about-content_images {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    height: 70vh !important;
+    min-height: 450px !important;
+    max-height: 600px !important;
+    border-radius: 12px !important;
+  }
+  
+  .about-content_image,
+  .section_about .about-content_image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    border-radius: 12px !important;
+  }
+  
+  .about-content_image-mask,
+  .section_about .about-content_image-mask {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .about-content_image-parallax,
+  .about-content_image-track {
+    width: 100% !important;
   }
 }
 
@@ -767,10 +816,6 @@ input:-webkit-autofill:active {
   .padding-global {
     padding-left: 4%;
     padding-right: 4%;
-  }
-  
-  .about-content_images {
-    max-width: 38%;
   }
   
   .footer_details {
